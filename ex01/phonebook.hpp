@@ -14,7 +14,7 @@ class Contact
     public :
         void    getter()
         {
-            
+
         }
 };
 
@@ -36,7 +36,7 @@ class PhoneBook
             std::cout << std::endl;
             std::cout << "[1] ADD [2] SEARCH [3] EXIT" << std::endl;
             std::cin >> input;
-
+            // 모든 eof 일때 처리 해줘야함.
             return input;
         }
 
@@ -46,21 +46,19 @@ class PhoneBook
             {
                 if (input == "ADD")
                     return (ADD());
-                else if(input == "SEARCH")
+                if(input == "SEARCH")
                 {
                     std::cout << "Input the Index" << std::endl;
                     std::cin >> idx;
                     return (SEARCH(idx));
                 }
-                else if(input == "EXIT")
+                if(input == "EXIT")
                     return (EXIT());
-                else
-                {
-                    print_error();
-                    return ;
-                }
+                print_error();
+                return ;
             }
         }
+        
 
         void    execute_program()
         {
@@ -124,5 +122,5 @@ class PhoneBook
         void    EXIT()
         {
             exit(0);
-        }   
+        }  
 };
