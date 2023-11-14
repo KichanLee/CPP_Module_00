@@ -11,14 +11,11 @@ class PhoneBook
 		
 
 	public:
-		PhoneBook() : idx(0) {
-			
-        // Initialize other member variables if needed
-		}
+
 		int             idx;
-		// int				cnt;
 		std::string     show_menu();
 		std::string     length_over_ten(std::string str);
+		void			get_eof();
 		void            choose_menu(std::string input);
 		void            execute_program();
 		void            print_error();
