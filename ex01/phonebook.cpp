@@ -91,7 +91,6 @@ void    PhoneBook:: ADD()
 	std::getline(std::cin, input);
 	get_eof();
 	contact[idx].set_First_Name(input);
-	std::cout << contact[idx].get_First_Name();
 	std::cout << "Input Last Name" << std::endl;
 	std::getline(std::cin, input);
 	get_eof();
