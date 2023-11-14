@@ -1,5 +1,7 @@
 #include "Phonebook.hpp"
 
+#include <sstream>
+
 
 /*
 *   input 으로 들어온 인자 값 처리 eof 여부
@@ -36,6 +38,8 @@ std::string	PhoneBook::show_menu()
 
 void	PhoneBook::choose_menu(std::string input)
 {
+	std::istringstream input_idx;
+	int	idx_integer;
 	while (1)
 	{
 		if (input == "ADD")
@@ -43,9 +47,10 @@ void	PhoneBook::choose_menu(std::string input)
 		if (input == "SEARCH")
 		{
 			std::cout << "Input the Index" << std::endl;
-			std::getline(std::cin, input);
+			std::getline(std::cin, input_idx);
 			get_eof();
-			return (SEARCH(idx));
+			input_idx >> idx_integer;
+			return (SEARCH(idx_integer));
 		}
 		if(input == "EXIT")
 			return (EXIT());
@@ -120,9 +125,9 @@ void    PhoneBook:: SEARCH(int idx)
 	std::cout << '|';
 	print_format("nick name");
 	std::cout << std::endl;
-	if(this->idx >= 0 && this->idx < 8)
+	if(idx >= 0 && idx < 8)
 	{
-		print_format(std::to_string(this->idx));
+		print_format(std::to_string(idx));
 		std::cout << '|';
 		print_format(length_over_ten(contact[idx].get_First_Name()));
 		std::cout << '|';
