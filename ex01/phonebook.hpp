@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:53:13 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 16:31:06 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/15 17:10:21 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ class PhoneBook
 		void            execute_program();
 		void            print_error();
 		void            print_format(std:: string str);
+		void			print_searchformat();
+		void			show_data();
 		void            ADD();
 		void            EXIT();
-		void            SEARCH(int idx);
+		void            SEARCH(int idx, int flag);
 };
 
 #endif

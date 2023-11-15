@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 16:31:28 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/15 18:06:56 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,12 +50,18 @@ void	PhoneBook::choose_menu(std::string input)
 			return (ADD());
 		if (input == "SEARCH")
 		{
-			std::cout << "Input the Index" << std::endl;
+			show_data();
+			
+			std::cout<< std::endl << "Input the Index" << std::endl;
 			std::getline(std::cin, str);
 			get_eof();
 			std::istringstream input_idx(str);
-			input_idx >> idx_integer;
-			return (SEARCH(idx_integer));
+			if(!input_idx >> idx_integer)
+			{
+				print_error();
+				continue;
+			}
+			return (SEARCH(idx_integer, 1));
 		}
 		if(input == "EXIT")
 			return (EXIT());
@@ -73,7 +79,6 @@ std::string PhoneBook::length_over_ten(std::string str)
     }
     return str;
 }
-
 
 void    PhoneBook:: print_error()
 {
@@ -94,7 +99,7 @@ void            PhoneBook:: EXIT()
 void    PhoneBook:: ADD()
 {
 	if(idx > 7)
-		idx = 0;
+		idx %= 8;
 	std::cout << "Input First Name" << std::endl;
 	std::getline(std::cin, input);
 	get_eof();
@@ -118,16 +123,36 @@ void    PhoneBook:: ADD()
 	++this->idx;
 }
 
-void    PhoneBook:: SEARCH(int idx)
+void	PhoneBook::print_searchformat()
 {
 	print_format("index");
 	std::cout << '|';
-	print_format("first name");
+ 	print_format("first name");
 	std::cout << '|';
 	print_format("last name");
 	std::cout << '|';
 	print_format("nick name");
 	std::cout << std::endl;
+}
+
+
+void	PhoneBook::show_data()
+{
+	for(int i = 0; i < 8; ++i)
+	{
+		if(i == 0)
+			print_searchformat();
+		if(!contact[i].get_First_Name().empty())
+			SEARCH(i, 0);
+		std::cout <<  std::endl;
+	}
+}
+
+
+void    PhoneBook:: SEARCH(int idx, int flag)
+{
+	if(flag == 1)
+		print_searchformat();
 	if(idx >= 0 && idx < 8)
 	{
 		print_format(std::to_string(idx));
