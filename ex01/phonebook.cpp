@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 18:06:56 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/15 18:56:53 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,6 +44,7 @@ void	PhoneBook::choose_menu(std::string input)
 {
 	std::string str;
 	int	idx_integer;
+	
 	while (1)
 	{
 		if (input == "ADD")
@@ -56,7 +57,8 @@ void	PhoneBook::choose_menu(std::string input)
 			std::getline(std::cin, str);
 			get_eof();
 			std::istringstream input_idx(str);
-			if(!input_idx >> idx_integer)
+			
+			if(!(input_idx >> idx_integer))
 			{
 				print_error();
 				continue;
@@ -72,7 +74,8 @@ void	PhoneBook::choose_menu(std::string input)
 
 std::string PhoneBook::length_over_ten(std::string str) 
 {
-    if (str.length() > 10) {
+    if (str.length() > 10) 
+	{
         std::string modify_str = str.substr(0, 9);
         modify_str.push_back('.');
         return modify_str;
@@ -82,8 +85,7 @@ std::string PhoneBook::length_over_ten(std::string str)
 
 void    PhoneBook:: print_error()
 {
-	std::cout << std::endl;
-	std::cout << "Invalid Input. Try Again" << std::endl;
+	std::cout << "\nInvalid Input. Try Again" << std::endl;
 }
 
 void    PhoneBook:: print_format(std:: string str)
@@ -100,7 +102,7 @@ void    PhoneBook:: ADD()
 {
 	if(idx > 7)
 		idx %= 8;
-	std::cout << "Input First Name" << std::endl;
+ 	std::cout << "Input First Name" << std::endl;
 	std::getline(std::cin, input);
 	get_eof();
 	contact[idx].set_First_Name(input);
@@ -153,7 +155,7 @@ void    PhoneBook:: SEARCH(int idx, int flag)
 {
 	if(flag == 1)
 		print_searchformat();
-	if(idx >= 0 && idx < 8)
+	if(idx >= 0 && idx <= 7)
 	{
 		print_format(std::to_string(idx));
 		std::cout << '|';
