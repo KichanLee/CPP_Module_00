@@ -6,11 +6,11 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 13:52:51 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/15 16:31:28 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Phonebook.hpp"
+#include "PhoneBook.hpp"
 
 void	PhoneBook:: get_eof()
 {
