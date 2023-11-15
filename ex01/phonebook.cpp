@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 18:56:53 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/15 19:20:09 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	PhoneBook::choose_menu(std::string input)
 			if(!(input_idx >> idx_integer))
 			{
 				print_error();
-				continue;
+				return ;
 			}
 			return (SEARCH(idx_integer, 1));
 		}
