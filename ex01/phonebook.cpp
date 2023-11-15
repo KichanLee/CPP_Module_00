@@ -1,12 +1,16 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
+/*   Updated: 2023/11/15 13:52:51 by kichlee          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Phonebook.hpp"
-
-#include <sstream>
-
-
-/*
-*   input 으로 들어온 인자 값 처리 eof 여부
-	getline으로 처리해주면 된다.
-*/
 
 void	PhoneBook:: get_eof()
 {
@@ -38,7 +42,7 @@ std::string	PhoneBook::show_menu()
 
 void	PhoneBook::choose_menu(std::string input)
 {
-	std::istringstream input_idx;
+	std::string str;
 	int	idx_integer;
 	while (1)
 	{
@@ -47,8 +51,9 @@ void	PhoneBook::choose_menu(std::string input)
 		if (input == "SEARCH")
 		{
 			std::cout << "Input the Index" << std::endl;
-			std::getline(std::cin, input_idx);
+			std::getline(std::cin, str);
 			get_eof();
+			std::istringstream input_idx(str);
 			input_idx >> idx_integer;
 			return (SEARCH(idx_integer));
 		}
@@ -58,7 +63,6 @@ void	PhoneBook::choose_menu(std::string input)
 		return ;
 	}
 }
-
 
 std::string PhoneBook::length_over_ten(std::string str) 
 {
@@ -91,7 +95,6 @@ void    PhoneBook:: ADD()
 {
 	if(idx > 7)
 		idx = 0;
-	std::cout << "idx value is " << idx << std::endl;
 	std::cout << "Input First Name" << std::endl;
 	std::getline(std::cin, input);
 	get_eof();
