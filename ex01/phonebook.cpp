@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 19:20:09 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/17 08:31:40 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -98,30 +98,31 @@ void            PhoneBook:: EXIT()
 	exit(0);
 }  
 
+std:: string PhoneBook:: enter_check()
+{
+	std::getline(std::cin, input);
+	get_eof();
+
+	if(input.empty())
+		enter_check();
+
+	return (input);
+}
+
 void    PhoneBook:: ADD()
 {
 	if(idx > 7)
 		idx %= 8;
  	std::cout << "Input First Name" << std::endl;
-	std::getline(std::cin, input);
-	get_eof();
-	contact[idx].set_First_Name(input);
+	contact[idx].set_First_Name(enter_check());
 	std::cout << "Input Last Name" << std::endl;
-	std::getline(std::cin, input);
-	get_eof();
-	contact[idx].set_Last_Name(input);
+	contact[idx].set_Last_Name(enter_check());
 	std::cout << "Input Nick Name" << std::endl;
-	std::getline(std::cin, input);
-	get_eof();
-	contact[idx].set_Nick_Name(input);
+	contact[idx].set_Nick_Name(enter_check());
 	std::cout << "Input Phone Number" << std::endl;
-	std::getline(std::cin, input);
-	get_eof();
-	contact[idx].set_phone_Number(input);
+	contact[idx].set_phone_Number(enter_check());
 	std::cout << "Input Darkest_Secret" << std::endl;
-	std::getline(std::cin, input);
-	get_eof();
-	contact[idx].set_Darkest_Secret(input);
+	contact[idx].set_Darkest_Secret(enter_check());
 	++this->idx;
 }
 

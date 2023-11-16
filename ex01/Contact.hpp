@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:29 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 17:08:21 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/17 08:17:50 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ class Contact {
         void        set_Nick_Name(std::string str);
         void        set_phone_Number(std::string str);
         void        set_Darkest_Secret(std::string str);
+        
     
     private:
         std::string first_name;

@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:53:13 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/15 18:48:43 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/17 08:23:10 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ class PhoneBook
 		int             idx;
 		std::string     show_menu();
 		std::string     length_over_ten(std::string str);
+		std::string			enter_check();
 		void			get_eof();
 		void            choose_menu(std::string input);
 		void            execute_program();
