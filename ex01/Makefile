@@ -6,7 +6,7 @@
 #    By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 13:53:49 by kichlee           #+#    #+#              #
-#    Updated: 2023/11/15 16:31:11 by kichlee          ###   ########.fr        #
+#    Updated: 2023/11/17 08:57:35 by kichlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,8 @@ NAME	=	PhoneBook
 CC		=	c++ 
 CFLAG	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
-SRCS	=	phonebook.cpp \
-			contact.cpp \
+SRCS	=	PhoneBook.cpp \
+			Contact.cpp \
 			main.cpp
 OBJS	=	${SRCS:.c=.o}
 
