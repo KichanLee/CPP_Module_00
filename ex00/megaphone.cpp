@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:24 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/20 15:29:26 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:44:23 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,6 @@ int main(int ac, char *av[])
 		std::string convert = av[i];
 		func_toupper(convert);
 		std::cout << convert;
-		
-		if(i != ac -1)
-			std::cout << " ";
 	}
 	std::cout << std::endl;
 
