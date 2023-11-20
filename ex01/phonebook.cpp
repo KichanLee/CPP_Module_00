@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/20 15:02:32 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/20 16:00:47 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 void	PhoneBook:: get_eof()
 {
 	if (std::cin.eof()) 
-		exit(0);
+		std::exit(0);
 }
 
 void	PhoneBook:: execute_program()
@@ -95,7 +95,7 @@ void    PhoneBook:: print_format(std:: string str)
 
 void            PhoneBook:: EXIT()
 {
-	exit(0);
+	std::exit(0);
 }  
 
 std:: string PhoneBook:: enter_check()
@@ -168,8 +168,6 @@ void    PhoneBook:: SEARCH(int idx, int flag)
 		print_format(length_over_ten(contact[idx].get_Last_Name()));
 		std::cout << '|';
 		print_format(length_over_ten(contact[idx].get_Nick_Name()));
-		
-		return ;
 	}
 	else if(idx >= 0 && idx <= 7 && flag == 1)
 	{

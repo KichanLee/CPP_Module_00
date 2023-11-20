@@ -6,7 +6,7 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:53:13 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/20 14:33:01 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:56:34 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include "Contact.hpp"
 #include <sstream>
+#include <cstdlib>
 
 class PhoneBook
 {
