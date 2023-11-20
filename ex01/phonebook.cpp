@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Phonebook.cpp                                      :+:      :+:    :+:   */
+/*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:47 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/17 08:31:40 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/20 14:41:20 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -154,9 +154,7 @@ void	PhoneBook::show_data()
 
 void    PhoneBook:: SEARCH(int idx, int flag)
 {
-	if(flag == 1)
-		print_searchformat();
-	if(idx >= 0 && idx <= 7)
+	if(flag == 0)
 	{
 		print_format(std::to_string(idx));
 		std::cout << '|';
@@ -165,6 +163,23 @@ void    PhoneBook:: SEARCH(int idx, int flag)
 		print_format(length_over_ten(contact[idx].get_Last_Name()));
 		std::cout << '|';
 		print_format(length_over_ten(contact[idx].get_Nick_Name()));
+		
+		return ;
+	}
+	else if(idx >= 0 && idx <= 7 && flag == 1)
+	{
+		print_format(std::to_string(idx));
+		std::cout << '|';
+		print_format(length_over_ten(contact[idx].get_First_Name()));
+		std::cout << '|';
+		print_format(length_over_ten(contact[idx].get_Last_Name()));
+		std::cout << '|';
+		print_format(length_over_ten(contact[idx].get_Nick_Name()));
+		std::cout << '|';
+		print_format(length_over_ten(contact[idx].get_Phone_Number()));
+		std::cout << '|';
+		print_format(length_over_ten(contact[idx].get_Darkest_Secret()));
+		std::cout << '|';
 	}
 	else
 		print_error();

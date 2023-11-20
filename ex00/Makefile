@@ -6,25 +6,25 @@
 #    By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 13:53:54 by kichlee           #+#    #+#              #
-#    Updated: 2023/11/15 16:30:44 by kichlee          ###   ########.fr        #
+#    Updated: 2023/11/20 14:13:49 by kichlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	megaphone
 CC		=	c++ 
-CFLAG	=	-Wall -Wextra -Werror 
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 SRCS	=	megaphone.cpp
 OBJS	=	${SRCS:.c=.o}
 
 all	:
-	@$(MAKE) $(NAME)
+	$(MAKE) $(NAME)
 
 $(NAME) : $(OBJS)
-	@$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
+	$(CC) $(CFLAGS) -o $(NAME) $(OBJS)
 
 %.o : %.c
-	@$(CC) $(CFLAGS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean :
 	@$(RM)

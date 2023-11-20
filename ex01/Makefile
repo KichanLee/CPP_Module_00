@@ -6,13 +6,13 @@
 #    By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/11/15 13:53:49 by kichlee           #+#    #+#              #
-#    Updated: 2023/11/17 08:57:35 by kichlee          ###   ########.fr        #
+#    Updated: 2023/11/20 14:17:23 by kichlee          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME	=	PhoneBook
 CC		=	c++ 
-CFLAG	=	-Wall -Wextra -Werror -std=c++98
+CFLAGS	=	-Wall -Wextra -Werror -std=c++98
 RM		=	rm -rf
 SRCS	=	PhoneBook.cpp \
 			Contact.cpp \
