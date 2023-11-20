@@ -6,35 +6,37 @@
 /*   By: kichlee <kichlee@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/15 13:52:24 by kichlee           #+#    #+#             */
-/*   Updated: 2023/11/20 14:16:28 by kichlee          ###   ########.fr       */
+/*   Updated: 2023/11/20 15:29:26 by kichlee          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
+#include <string>
+#include <cctype>
 
-std::string func_toupper(const std::string& str);
+void	func_toupper(std::string& str);
 
 int main(int ac, char *av[])
 {
 	if(ac == 1)
 		std::cout << "* LOUD AND UNBEARABLE FEEDBACK NOISE *";
-
+	
 	for(int i = 1; i < ac; ++i)
 	{
-		std::cout << func_toupper((std::string)av[i]);
+		std::string convert = av[i];
+		func_toupper(convert);
+		std::cout << convert;
+		
 		if(i != ac -1)
 			std::cout << " ";
 	}
-
 	std::cout << std::endl;
+
+	return (0);
 }
 
-std::string func_toupper(const std::string& str)
+void	func_toupper(std::string& str)
 {
-	std::string result = str;
-
 	for(int i = 0; i < (int) str.length(); ++i)
-		result[i] = std::toupper(result[i]);
-	
-	return (result);
+		str[i] = std::toupper(str[i]);
 }
